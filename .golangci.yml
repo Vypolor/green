@@ -1,0 +1,19 @@
+version: "2"
+
+linters:
+  default: none
+  enable:
+    - errcheck       # проверяет необработанные ошибки
+    - govet          # анализирует подозрительные конструкции
+    - staticcheck    # комплексный статический анализ
+    - unused         # неиспользуемый код
+    - misspell       # опечатки в комментариях и строках
+    - godot          # точка в конце комментариев
+
+formatters:
+  enable:
+    - goimports      # порядок импортов
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
