@@ -12,6 +12,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o bin/server ./cmd/server
 
 FROM scratch
 
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=builder /app/bin/server /server
 COPY --from=builder /app/static /static
 
